@@ -47,14 +47,14 @@ body {
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-#cookie-modal {
+#cookieBox {
   display: none;
   justify-content: center;
   align-items: end;
   padding-bottom: 30px;
 }
 
-#settings-modal {
+#settings {
   display: none;
   justify-content: center;
   align-items: center;
