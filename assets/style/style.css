@@ -1,28 +1,33 @@
 @charset "utf-8";
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;;
   min-height: 100vh;
-box-sizing: border-box;
+  margin: 0;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #eef2ff, #dbeafe);
 }
 
 .hero {
   min-height: 100vh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 20px;
 }
 
 .hero h1 {
   font-size: 40px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .hero p {
   max-width: 700px;
   line-height: 1.6;
   font-size: 18px;
+   margin-top: 0;
 }
 
 
@@ -30,19 +35,20 @@ box-sizing: border-box;
   display: flex;
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
   width: 90%;
   max-width: 420px;
-  background-color: white;
-  padding: 25px;
-  border-radius: 12px;
+  background-color: #ffffff;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 #cookie-modal {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: end;
   padding-bottom: 30px;
@@ -55,13 +61,15 @@ box-sizing: border-box;
   padding: 20px;
 }
 .modal-content h2 {
-  margin-bottom: 12px;
+  margin-bottom: 7px;
   font-size: 24px;
+   color: #1e293b;
 }
 
 .modal-content p {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   line-height: 1.5;
+   color: #475569;
 }
 
 .btn {
