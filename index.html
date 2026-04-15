@@ -7,23 +7,46 @@
     <meta name="description" content="API">
     <title>Cookie Assignment</title>
     <link rel="stylesheet" href="assets/style/style.css" media="all">
-    <script src="./assets/script/script.js">defer</script>
+    <script src="./assets/script/script.js"defer></script>
 </head>
 <body>
-     <main>
+  <main>
    <section class="hero">
       <h1>Welcome to My Website</h1>
-      <p>This page uses cookies to improve user experience.
-        We collect basic information such as your browser, device, and screen size to provide better performance.</p>
+      <p> We use cookies to collect limited information about your device and improve your browsing experience.</p>
   </section>
   <div id="cookie-modal" class="modal">
     <div class="modal-content">
     <h2>Cookies</h2>
     <p>We use cookies to store information about your browser, device, and operating system.</p>
-    <button id="accept-all-btn">Accept all</button>
-    <button id="settings-btn">Settings</button>
+    <button id="accept-all-btn" class="btn primary">Accept all</button>
+    <button id="settings-btn" class="btn secondry">Settings</button>
   </div>
 </div>
+   <div id="settings-modal" class="modal">
+      <div class="modal-content">
+        <h2>Settings</h2>
+    <div class="options">
+    <label>
+        <input type="checkbox" id="browser-cookie" checked>
+        Browser
+    </label>
+      <label>
+        <input type="checkbox" id="os-cookie" checked>
+        Operating System
+    </label>
+     <label>
+        <input type="checkbox" id="width-cookie" checked>
+        Screen Width
+    </label>
+     <label>
+        <input type="checkbox" id="height-cookie" checked>
+        Screen Height
+    </label>
+     <button id="save-preferences-btn">Save Preferences</button>
+     </div>
+    </div>
+   </div>
   </main>
 </body>
 </html>
