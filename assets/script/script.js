@@ -64,19 +64,41 @@ function getCookieValue(name) {
 }
 
 function getOS() {
-    let ua = navigator.userAgent;
+    let OsInfo = navigator.userAgent;
 
-    let systems = [
+    let OS = [
         { name: 'Windows', key: 'Win' },
         { name: 'MacOS', key: 'Mac' },
         { name: 'Linux', key: 'Linux' }
     ];
 
-    for (let i = 0; i < systems.length; i++) {
-        if (ua.indexOf(systems[i].key) !== -1) {
-            return systems[i].name;
+    for (let i = 0; i < OS.length; i++) {
+        if (OsInfo.indexOf(s[i].key) !== -1) {
+            return OS[i].name;
         }
     }
 
-    return 'Unknown';
+    return 'Not Available';
 }
+
+console.log(getOS());
+
+function getBrowser() {
+    let BrowserInfo = navigator.userAgent;
+
+    let browsers = [
+        { name: 'Microsoft Edge', key: 'Edg' },
+        { name: ' Google Chrome', key: 'Chrome' },
+        { name: 'Firefox', key: 'Firefox' },
+        { name: 'Safari', key: 'Safari' }
+    ];
+
+    for (let i = 0; i < browsers.length; i++) {
+        if (BrowserInfo.indexOf(browsers[i].key) !== -1) {
+            return browsers[i].name;
+        }
+    }
+
+    return 'Not Available';
+}
+console.log(getBrowser());
