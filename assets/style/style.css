@@ -39,3 +39,26 @@ box-sizing: border-box;
   padding: 25px;
   border-radius: 12px;
 }
+
+#cookie-modal {
+  display: none;
+  justify-content: center;
+  align-items: end;
+  padding-bottom: 30px;
+}
+
+#settings-modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.modal-content h2 {
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+.modal-content p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
