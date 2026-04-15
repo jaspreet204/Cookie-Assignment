@@ -43,3 +43,40 @@ function getCookie() {
   }
 
 }
+
+function getCookieValue(name) {
+    if (document.cookie) {
+        const cookies = document.cookie.split(';');
+
+        for (let i = 0; i < cookies.length; i++) {
+            let trimmedCookie = cookies[i].trim();
+
+            let key = decodeURIComponent(trimmedCookie.split('=')[0]);
+            let value = decodeURIComponent(trimmedCookie.split('=')[1]);
+
+            if (key === name) {
+                return value;
+            }
+        }
+    }
+
+    return null;
+}
+
+function getOS() {
+    let ua = navigator.userAgent;
+
+    let systems = [
+        { name: 'Windows', key: 'Win' },
+        { name: 'MacOS', key: 'Mac' },
+        { name: 'Linux', key: 'Linux' }
+    ];
+
+    for (let i = 0; i < systems.length; i++) {
+        if (ua.indexOf(systems[i].key) !== -1) {
+            return systems[i].name;
+        }
+    }
+
+    return 'Unknown';
+}
