@@ -28,3 +28,18 @@ function setCookie(name, value, maxAge) {
     document.cookie = cookieString;
 }
 
+function getCookie() {
+    if(document.cookie) {
+    const cookies = document.cookie.split(';');
+    console.log(cookies);
+
+ for(let i = 0; i < cookies.length; i++){
+     let trimmedCookie = cookies[i].trim();
+        
+        let key = decodeURIComponent(trimmedCookie.split('=')[0]); 
+        let value = decodeURIComponent(trimmedCookie.split('=')[1]);
+           console.log(`Key: ${key}, Value: ${value}`);
+    }
+  }
+
+}
