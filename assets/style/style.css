@@ -26,7 +26,11 @@ box-sizing: border-box;
 }
 
 .modal {
-  display: none;
+  display: flex;
+}
+
+.modal {
+  display: flex;
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.4);
@@ -41,14 +45,14 @@ box-sizing: border-box;
 }
 
 #cookie-modal {
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: end;
   padding-bottom: 30px;
 }
 
 #settings-modal {
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -61,4 +65,21 @@ box-sizing: border-box;
 .modal-content p {
   margin-bottom: 20px;
   line-height: 1.5;
+}
+
+.btn {
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.primary {
+  background-color: #2d6cdf;
+  color: white;
+}
+
+.secondary {
+  background-color: white;
+  border: 1px solid #ccc;
 }
