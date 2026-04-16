@@ -6,7 +6,7 @@ const acceptBtn = document.getElementById('acceptBtn');
 const settingBtn = document.getElementById('settingsBtn');
 const saveBtn = document.getElementById('saveBtn');
 //options
-const browserCheck = document.getElementById('BrowserCheck');
+const browserCheck = document.getElementById('browserCheck');
 const osCheck = document.getElementById('osCheck');
 const widthCheck = document.getElementById('widthCheck');
 const heightCheck = document.getElementById('heightCheck');
@@ -73,7 +73,7 @@ function getOS() {
     ];
 
     for (let i = 0; i < OS.length; i++) {
-        if (OsInfo.indexOf(s[i].key) !== -1) {
+        if (OsInfo.indexOf(OS[i].key) !== -1) {
             return OS[i].name;
         }
     }
@@ -88,7 +88,7 @@ function getBrowser() {
 
     let browsers = [
         { name: 'Microsoft Edge', key: 'Edg' },
-        { name: ' Google Chrome', key: 'Chrome' },
+        { name: 'Google Chrome', key: 'Chrome' },
         { name: 'Firefox', key: 'Firefox' },
         { name: 'Safari', key: 'Safari' }
     ];
@@ -103,9 +103,22 @@ function getBrowser() {
 }
 console.log(getBrowser());
 
-function openSettings() {
+function toSettings() {
     cookieBox.style.display = 'none';
-    settingsBox.style.display = 'flex';
+    settings.style.display = 'flex';
 }
 
-settingsBtn.onclick = openSettings;
+settingBtn.onclick = toSettings;
+
+function acceptAll() {
+    setCookie('browser', getBrowser(), LIFETIME);
+    setCookie('os', getOS(), LIFETIME);
+    setCookie('screenWidth', screen.width, LIFETIME);
+    setCookie('screenHeight', screen.height, LIFETIME);
+
+    setCookie('userConsent', 'accepted', LIFETIME);
+
+    cookieBox.style.display = 'none';
+}
+
+acceptBtn.onclick = acceptAll;
