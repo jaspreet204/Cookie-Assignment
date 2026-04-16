@@ -102,3 +102,10 @@ function getBrowser() {
     return 'Not Available';
 }
 console.log(getBrowser());
+
+function openSettings() {
+    cookieBox.style.display = 'none';
+    settingsBox.style.display = 'flex';
+}
+
+settingsBtn.onclick = openSettings;
