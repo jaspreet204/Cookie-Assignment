@@ -120,7 +120,7 @@ acceptBtn.onclick = acceptAll;
 
 function saveChoices() {
     console.log('Save button clicked');
-    
+
     if (browserCheck.checked) {
         setCookie('browser', getBrowser(), LIFETIME);
     }
@@ -136,7 +136,7 @@ function saveChoices() {
     if (heightCheck.checked) {
         setCookie('screenHeight', screen.height, LIFETIME);
     }
-
+  
     setCookie('userConsent', 'saved', LIFETIME);
 
      getCookie();

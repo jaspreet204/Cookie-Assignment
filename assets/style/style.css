@@ -86,15 +86,16 @@ body {
   color: white;
 }
 
-.secondary {
-  background-color: #2d6cdf;
-  border: 1px solid #ccc;
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
 }
 
 .button-group {
   display: flex;
   gap: 12px;
   margin-top: 20px;
+  justify-content: center;
 }
 
 #settings label {
