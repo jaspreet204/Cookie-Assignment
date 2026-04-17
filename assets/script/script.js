@@ -119,27 +119,19 @@ function acceptAll() {
 acceptBtn.onclick = acceptAll;
 
 function saveChoices() {
-    console.log('Save button clicked');
-
     if (browserCheck.checked) {
         setCookie('browser', getBrowser(), LIFETIME);
     }
-
     if (osCheck.checked) {
         setCookie('os', getOS(), LIFETIME);
     }
-
     if (widthCheck.checked) {
         setCookie('screenWidth', screen.width, LIFETIME);
     }
-
     if (heightCheck.checked) {
         setCookie('screenHeight', screen.height, LIFETIME);
     }
-  
     setCookie('userConsent', 'saved', LIFETIME);
-
-     getCookie();
     settings.style.display = 'none';
 }
 
@@ -147,10 +139,8 @@ saveBtn.onclick = saveChoices;
 
 window.onload = function () {
     setTimeout(function () {
-        console.log('cookieBox:', cookieBox);
-        console.log('cookies:', document.cookie);
-        console.log('userConsent:', getCookieValue('userConsent'));
-
-        cookieBox.style.display = 'flex';
+       if (!getCookieValue('userConsent')) {
+            cookieBox.style.display = 'flex';
+        } 
     }, 1000);
 };
