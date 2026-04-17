@@ -1,10 +1,9 @@
 @charset "utf-8";
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
   margin: 0;
-  box-sizing: border-box;
   background: linear-gradient(135deg, #eef2ff, #dbeafe);
 }
 
@@ -30,9 +29,12 @@ body {
    margin-top: 0;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 
 .modal {
-  display: flex;
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
@@ -85,7 +87,7 @@ body {
 }
 
 .secondary {
-  background-color: white;
+  background-color: #2d6cdf;
   border: 1px solid #ccc;
 }
 
@@ -95,7 +97,7 @@ body {
   margin-top: 20px;
 }
 
-#settings-modal label {
+#settings label {
   display: flex;
   align-items: center;
   gap: 10px;

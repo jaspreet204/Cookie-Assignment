@@ -2,8 +2,8 @@
 const cookieBox = document.getElementById('cookieBox');
 const settings = document.getElementById('settings');
 //Buttons
-const acceptBtn = document.getElementById('acceptBtn');
-const settingBtn = document.getElementById('settingsBtn');
+const acceptBtn = document.getElementById('acceptbtn');
+const settingBtn = document.getElementById('settingsbtn');
 const saveBtn = document.getElementById('saveBtn');
 //options
 const browserCheck = document.getElementById('browserCheck');
@@ -81,8 +81,6 @@ function getOS() {
     return 'Not Available';
 }
 
-console.log(getOS());
-
 function getBrowser() {
     let BrowserInfo = navigator.userAgent;
 
@@ -101,7 +99,6 @@ function getBrowser() {
 
     return 'Not Available';
 }
-console.log(getBrowser());
 
 function toSettings() {
     cookieBox.style.display = 'none';
@@ -115,10 +112,45 @@ function acceptAll() {
     setCookie('os', getOS(), LIFETIME);
     setCookie('screenWidth', screen.width, LIFETIME);
     setCookie('screenHeight', screen.height, LIFETIME);
-
     setCookie('userConsent', 'accepted', LIFETIME);
-
     cookieBox.style.display = 'none';
 }
 
 acceptBtn.onclick = acceptAll;
+
+function saveChoices() {
+    console.log('Save button clicked');
+    
+    if (browserCheck.checked) {
+        setCookie('browser', getBrowser(), LIFETIME);
+    }
+
+    if (osCheck.checked) {
+        setCookie('os', getOS(), LIFETIME);
+    }
+
+    if (widthCheck.checked) {
+        setCookie('screenWidth', screen.width, LIFETIME);
+    }
+
+    if (heightCheck.checked) {
+        setCookie('screenHeight', screen.height, LIFETIME);
+    }
+
+    setCookie('userConsent', 'saved', LIFETIME);
+
+     getCookie();
+    settings.style.display = 'none';
+}
+
+saveBtn.onclick = saveChoices;
+
+window.onload = function () {
+    setTimeout(function () {
+        console.log('cookieBox:', cookieBox);
+        console.log('cookies:', document.cookie);
+        console.log('userConsent:', getCookieValue('userConsent'));
+
+        cookieBox.style.display = 'flex';
+    }, 1000);
+};
